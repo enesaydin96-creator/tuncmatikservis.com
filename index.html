@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tunçmatik Yetkili Servis | Aytech Teknoloji</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #FF6A00;
+  --orange-dark: #e05500;
+  --orange-light: #ff8c3a;
+  --ink: #111418;
+  --ink-soft: #3a3f47;
+  --ink-muted: #6b7280;
+  --paper: #ffffff;
+  --paper-warm: #faf8f5;
+  --paper-gray: #f4f4f5;
+  --green: #16a34a;
+  --yellow: #ca8a04;
+  --red: #dc2626;
+  --border: #e5e7eb;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* TOPBAR */
+.topbar {
+  background: var(--ink);
+  color: white;
+  padding: 8px 0;
+  font-size: 13px;
+  font-family: var(--font-mono);
+}
+.topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.topbar-badge {
+  background: var(--orange);
+  color: white;
+  padding: 3px 10px;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  animation: pulse-badge 2s infinite;
+}
+@keyframes pulse-badge {
+  0%,100% { opacity:1; }
+  50% { opacity:0.75; }
+}
+.topbar-links { display:flex; gap:20px; align-items:center; }
+.topbar-links a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 12px;
+}
+.topbar-links a:hover { color: var(--orange); }
+.topbar-links strong { color: white; }
+
+/* NAV */
+nav {
+  background: white;
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  gap: 16px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-logo-mark {
+  width: 42px;
+  height: 42px;
+  background: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 20px;
+  color: white;
+  letter-spacing: -0.02em;
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.nav-logo-brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+.nav-logo-sub {
+  font-size: 10px;
+  color: var(--orange);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: all 0.15s;
+}
+.nav-links a:hover {
+  color: var(--orange);
+  background: #fff4ed;
+}
+.nav-actions { display: flex; gap: 10px; align-items: center; }
+.btn-crm {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 8px 16px;
+  border: 1.5px solid var(--border);
+  background: white;
+  color: var(--ink-soft);
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: all 0.15s;
+}
+.btn-crm:hover { border-color: var(--orange); color: var(--orange); }
+.btn-acil {
+  background: var(--orange);
+  color: white;
+  padding: 10px 18px;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s, transform 0.1s;
+}
+.btn-acil:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+/* HERO */
+.hero {
+  background: var(--ink);
+  color: white;
+  padding: 80px 24px 70px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,106,0,0.15) 0%, transparent 60%),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.02) 80px);
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,106,0,0.3);
+  padding: 5px 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  animation: pulse-dot 1.5s infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { transform: scale(1); opacity:1; }
+  50% { transform: scale(1.5); opacity:0.6; }
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.hero h1 span { color: var(--orange); }
+.hero-sub {
+  font-size: 16px;
+  color: #9ca3af;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-hero-primary {
+  background: var(--orange);
+  color: white;
+  padding: 14px 28px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-hero-primary:hover { background: var(--orange-dark); transform: translateY(-2px); }
+.btn-hero-secondary {
+  background: transparent;
+  color: white;
+  padding: 14px 28px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.btn-hero-secondary:hover { border-color: var(--orange); color: var(--orange); }
+.hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.stat-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.2s;
+}
+.stat-card:hover { border-color: rgba(255,106,0,0.4); }
+.stat-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(255,106,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+/* TRUST BAR */
+.trust-bar {
+  background: var(--orange);
+  color: white;
+  padding: 16px 24px;
+  overflow: hidden;
+}
+.trust-scroll {
+  display: flex;
+  gap: 40px;
+  animation: scroll-trust 20s linear infinite;
+  width: max-content;
+}
+@keyframes scroll-trust {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.trust-dot { width: 5px; height: 5px; background: rgba(255,255,255,0.5); border-radius: 50%; }
+
+/* SECTIONS */
+section { padding: 80px 24px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--orange);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.section-sub {
+  font-size: 16px;
+  color: var(--ink-muted);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* SMART-TRACK */
+.smart-track { background: var(--paper-warm); }
+.smart-track-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 48px;
+}
+.smart-features { display: flex; flex-direction: column; gap: 20px; }
+.smart-feat {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  background: white;
+  border-left: 3px solid var(--orange);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.smart-feat:hover { transform: translateX(4px); box-shadow: 4px 4px 20px rgba(0,0,0,0.06); }
+.smart-feat-icon {
+  width: 40px;
+  height: 40px;
+  background: #fff4ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.smart-feat-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+.smart-feat-desc { font-size: 14px; color: var(--ink-muted); }
+
+.crm-mockup {
+  background: var(--ink);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+.crm-titlebar {
+  background: #1e2330;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.crm-dot { width: 10px; height: 10px; border-radius: 50%; }
+.crm-body { padding: 20px; }
+.crm-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 13px;
+}
+.crm-row:last-child { border-bottom: none; }
+.crm-label { color: #6b7280; font-family: var(--font-mono); font-size: 11px; }
+.crm-val { color: white; font-weight: 500; }
+.crm-badge {
+  font-size: 10px;
+  padding: 3px 8px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.crm-badge.ok { background: rgba(22,163,74,0.2); color: #4ade80; }
+.crm-badge.warn { background: rgba(202,138,4,0.2); color: #fbbf24; }
+.crm-badge.crit { background: rgba(220,38,38,0.2); color: #f87171; }
+
+/* RISK TOOL */
+.risk-tool { background: var(--paper); }
+.risk-box {
+  background: var(--ink);
+  color: white;
+  padding: 48px;
+  margin-top: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.risk-box::before {
+  content: 'RİSK ANALİZİ';
+  position: absolute;
+  right: -20px;
+  top: 20px;
+  font-family: var(--font-display);
+  font-size: 80px;
+  font-weight: 900;
+  color: rgba(255,106,0,0.06);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  pointer-events: none;
+}
+.risk-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.form-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #9ca3af;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.form-group select,
+.form-group input {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-group select:focus,
+.form-group input:focus { border-color: var(--orange); }
+.form-group select option { background: #1e2330; color: white; }
+.btn-analyze {
+  background: var(--orange);
+  color: white;
+  padding: 13px 28px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-analyze:hover { background: var(--orange-dark); }
+
+#risk-result { display: none; }
+.result-card {
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.result-card.green { background: rgba(22,163,74,0.12); border-left: 4px solid var(--green); }
+.result-card.yellow { background: rgba(202,138,4,0.12); border-left: 4px solid #ca8a04; }
+.result-card.red { background: rgba(220,38,38,0.12); border-left: 4px solid var(--red); animation: shake-card 0.4s ease; }
+@keyframes shake-card {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+.result-icon { font-size: 40px; flex-shrink: 0; }
+.result-text { flex: 1; }
+.result-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+.result-title.green { color: #4ade80; }
+.result-title.yellow { color: #fbbf24; }
+.result-title.red { color: #f87171; }
+.result-desc { font-size: 14px; color: #d1d5db; line-height: 1.6; }
+.btn-teklif {
+  background: var(--orange);
+  color: white;
+  padding: 12px 24px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.btn-teklif:hover { background: var(--orange-dark); }
+
+/* EV SECTION */
+.ev-section { background: var(--paper-gray); }
+.ev-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.ev-card {
+  background: white;
+  padding: 32px 28px;
+  border-top: 3px solid var(--border);
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.ev-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.ev-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+.ev-card:hover::after { transform: scaleX(1); }
+.ev-card-icon { font-size: 32px; margin-bottom: 16px; }
+.ev-card-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.ev-card-desc { font-size: 14px; color: var(--ink-muted); line-height: 1.65; margin-bottom: 16px; }
+.ev-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.ev-product-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: #fff4ed;
+  color: var(--orange);
+  padding: 3px 8px;
+  border: 1px solid rgba(255,106,0,0.2);
+  letter-spacing: 0.04em;
+}
+.ev-cta {
+  background: var(--ink);
+  color: white;
+  padding: 48px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.ev-cta-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.ev-cta-sub { font-size: 15px; color: #9ca3af; margin-top: 6px; }
+
+/* INTERLINKING */
+.interlink { background: var(--ink); color: white; }
+.interlink .section-label { color: var(--orange); }
+.interlink-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+.ilink-card {
+  background: rgba(255,255,255,0.04);
+  padding: 32px 24px;
+  text-decoration: none;
+  color: white;
+  border-top: 2px solid rgba(255,106,0,0.3);
+  transition: all 0.2s;
+  display: block;
+}
+.ilink-card:hover {
+  background: rgba(255,106,0,0.08);
+  border-top-color: var(--orange);
+  transform: translateY(-2px);
+}
+.ilink-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.ilink-icon { font-size: 24px; margin-bottom: 12px; }
+.ilink-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.ilink-url {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--orange);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+.ilink-desc { font-size: 13px; color: #9ca3af; line-height: 1.6; }
+.ilink-arrow {
+  margin-top: 16px;
+  font-size: 18px;
+  color: var(--orange);
+  transition: transform 0.2s;
+}
+.ilink-card:hover .ilink-arrow { transform: translateX(4px); }
+
+/* FOOTER */
+footer {
+  background: #0a0c10;
+  color: white;
+  padding: 40px 24px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+.footer-brand span { color: var(--orange); }
+.footer-info { font-family: var(--font-mono); font-size: 12px; color: #6b7280; line-height: 1.8; }
+.footer-info a { color: var(--orange); text-decoration: none; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-inner, .smart-track-grid { grid-template-columns: 1fr; gap: 40px; }
+  .risk-form { grid-template-columns: 1fr 1fr; }
+  .ev-grid { grid-template-columns: 1fr; }
+  .interlink-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+}
+@media (max-width: 600px) {
+  .risk-form { grid-template-columns: 1fr; }
+  .interlink-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 34px; }
+  .risk-box { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span class="topbar-badge">⚡ 7/24 ACİL SERVİS</span>
+      <span style="color:#6b7280">Tunçmatik Yetkili Servis & Satış</span>
+    </div>
+    <div class="topbar-links">
+      <a href="tel:+905058525331">📞 +90 505 852 53 31</a>
+      <span style="color:#374151">|</span>
+      <a href="https://aytechteknoloji.com" target="_blank">🔗 <strong>Aytech Teknoloji</strong></a>
+      <span style="color:#374151">|</span>
+      <a href="#" style="color:#9ca3af">Maltepe / İstanbul</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark">T</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-brand">TUNÇMATIK SERVİS</span>
+        <span class="nav-logo-sub">Aytech Teknoloji · Yetkili</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hizmetler">Hizmetler</a></li>
+      <li><a href="#risk">Akü Analizi</a></li>
+      <li><a href="#ev">EV Şarj</a></li>
+      <li><a href="#network">Ekosistem</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://aytechteknoloji.com" target="_blank" class="btn-crm">CRM GİRİŞİ →</a>
+      <a href="tel:+905058525331" class="btn-acil">🚨 Acil Servis Çağır</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Yetkili Satıcı &amp; Resmi Servis</div>
+      <h1>Tunçmatik<br><span>Çözüm</span><br>Ortağı</h1>
+      <p class="hero-sub">Aytech Teknoloji güvencesiyle yıllık bakım, orijinal akü değişimi, kart onarımı ve EV şarj istasyonu kurulumu. Emeğinizin karşılığını kesintisiz güç ile alın.</p>
+      <div class="hero-ctas">
+        <a href="tel:+905058525331" class="btn-hero-primary">🚨 Acil Servis Çağır</a>
+        <a href="#risk" class="btn-hero-secondary">Akü Riskini Hesapla ↓</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-icon">⚡</div>
+        <div>
+          <div class="stat-num">7/24</div>
+          <div class="stat-label">Acil Teknik Destek & Müdahale</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🔋</div>
+        <div>
+          <div class="stat-num">%100</div>
+          <div class="stat-label">Orijinal Tunçmatik Yedek Parça</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏭</div>
+        <div>
+          <div class="stat-num">600kVA</div>
+          <div class="stat-label">Tek Faz'dan Endüstriyel'e Tam Seri</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🚗</div>
+        <div>
+          <div class="stat-num">EV</div>
+          <div class="stat-label">Şarj İstasyonu Kurulum & Servis</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-scroll">
+    <span class="trust-item"><span class="trust-dot"></span>PowerUP ONE / ECO</span>
+    <span class="trust-item"><span class="trust-dot"></span>Newtech PRO3 ONE</span>
+    <span class="trust-item"><span class="trust-dot"></span>Newtech Eco X9</span>
+    <span class="trust-item"><span class="trust-dot"></span>Lite II Serisi</span>
+    <span class="trust-item"><span class="trust-dot"></span>Digitech ECO</span>
+    <span class="trust-item"><span class="trust-dot"></span>Lift 1500VA</span>
+    <span class="trust-item"><span class="trust-dot"></span>Ultra One 10–40kVA</span>
+    <span class="trust-item"><span class="trust-dot"></span>Ultra One 60–200kVA</span>
+    <span class="trust-item"><span class="trust-dot"></span>Ultra One 300–600kVA</span>
+    <span class="trust-item"><span class="trust-dot"></span>EV Public Charger</span>
+    <span class="trust-item"><span class="trust-dot"></span>Pico / Pico Pro</span>
+    <span class="trust-item"><span class="trust-dot"></span>My Charger Serisi</span>
+    <!-- duplicate for seamless loop -->
+    <span class="trust-item"><span class="trust-dot"></span>PowerUP ONE / ECO</span>
+    <span class="trust-item"><span class="trust-dot"></span>Newtech PRO3 ONE</span>
+    <span class="trust-item"><span class="trust-dot"></span>Newtech Eco X9</span>
+    <span class="trust-item"><span class="trust-dot"></span>Lite II Serisi</span>
+    <span class="trust-item"><span class="trust-dot"></span>Digitech ECO</span>
+    <span class="trust-item"><span class="trust-dot"></span>Lift 1500VA</span>
+    <span class="trust-item"><span class="trust-dot"></span>Ultra One 10–40kVA</span>
+    <span class="trust-item"><span class="trust-dot"></span>Ultra One 60–200kVA</span>
+    <span class="trust-item"><span class="trust-dot"></span>Ultra One 300–600kVA</span>
+    <span class="trust-item"><span class="trust-dot"></span>EV Public Charger</span>
+    <span class="trust-item"><span class="trust-dot"></span>Pico / Pico Pro</span>
+    <span class="trust-item"><span class="trust-dot"></span>My Charger Serisi</span>
+  </div>
+</div>
+
+<!-- SMART-TRACK -->
+<section class="smart-track" id="hizmetler">
+  <div class="section-inner">
+    <div class="section-label">Smart-Track Sistemi</div>
+    <div class="section-title">Biz Diğerlerinden<br>Farklıyız</div>
+    <p class="section-sub">Aytech CRM entegrasyonu ile cihazınızı satın aldığınız günden bakım anlaşmanızın bitimine kadar takip altında tutuyoruz.</p>
+    <div class="smart-track-grid">
+      <div class="smart-features">
+        <div class="smart-feat">
+          <div class="smart-feat-icon">📱</div>
+          <div>
+            <div class="smart-feat-title">QR Kodlu Cihaz Kimliği</div>
+            <div class="smart-feat-desc">Her Tunçmatik cihazına yerleştirilen QR kod ile cihaz geçmişi, bakım kayıtları ve akü değişim tarihine anında ulaşın.</div>
+          </div>
+        </div>
+        <div class="smart-feat">
+          <div class="smart-feat-icon">🔔</div>
+          <div>
+            <div class="smart-feat-title">Otomatik Bakım Bildirimleri</div>
+            <div class="smart-feat-desc">Akü ömrü, periyodik bakım tarihi ve yazılım güncellemeleri için SMS/e-posta bildirimleri otomatik olarak gönderilir.</div>
+          </div>
+        </div>
+        <div class="smart-feat">
+          <div class="smart-feat-icon">📊</div>
+          <div>
+            <div class="smart-feat-title">Aytech CRM Takip Paneli</div>
+            <div class="smart-feat-desc">Tüm servis geçmişi, garanti durumu ve teknik raporlarınıza tek bir panel üzerinden kurumsal erişim imkânı.</div>
+          </div>
+        </div>
+        <div class="smart-feat">
+          <div class="smart-feat-icon">🛡️</div>
+          <div>
+            <div class="smart-feat-title">Yerinde Müdahale Garantisi</div>
+            <div class="smart-feat-desc">İstanbul ve çevresi için 4 saat içinde yerinde teknik müdahale taahhüdü. Üretim durdurmadan hizmet.</div>
+          </div>
+        </div>
+      </div>
+      <div class="crm-mockup">
+        <div class="crm-titlebar">
+          <div class="crm-dot" style="background:#ff5f57"></div>
+          <div class="crm-dot" style="background:#febc2e"></div>
+          <div class="crm-dot" style="background:#28c840"></div>
+          <span style="font-family:var(--font-mono);font-size:11px;color:#6b7280;margin-left:8px">aytech-crm / cihaz-izleme</span>
+        </div>
+        <div class="crm-body">
+          <div style="font-family:var(--font-mono);font-size:11px;color:#6b7280;margin-bottom:16px;letter-spacing:0.08em">AKTIF CİHAZLAR — 4 KAYIT</div>
+          <div class="crm-row">
+            <div>
+              <div class="crm-label">Cihaz</div>
+              <div class="crm-val">Ultra One 40kVA</div>
+            </div>
+            <span class="crm-badge ok">NORMAL</span>
+          </div>
+          <div class="crm-row">
+            <div>
+              <div class="crm-label">Cihaz</div>
+              <div class="crm-val">Newtech PRO3 3kVA</div>
+            </div>
+            <span class="crm-badge warn">BAKIM YAKLAŞIYOR</span>
+          </div>
+          <div class="crm-row">
+            <div>
+              <div class="crm-label">Cihaz</div>
+              <div class="crm-val">Digitech Eco 2kVA</div>
+            </div>
+            <span class="crm-badge crit">AKÜ KRİTİK</span>
+          </div>
+          <div class="crm-row">
+            <div>
+              <div class="crm-label">Cihaz</div>
+              <div class="crm-val">PowerUP ONE 6kVA</div>
+            </div>
+            <span class="crm-badge ok">NORMAL</span>
+          </div>
+          <div style="margin-top:20px;padding:12px;background:rgba(255,106,0,0.1);border-left:2px solid var(--orange)">
+            <div style="font-family:var(--font-mono);font-size:11px;color:var(--orange);letter-spacing:0.06em">⚠ 1 CİHAZ ACIL MÜDAHALE GEREKTİRİYOR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RISK TOOL -->
+<section class="risk-tool" id="risk">
+  <div class="section-inner">
+    <div class="section-label">Yapay Zeka Destekli Araç</div>
+    <div class="section-title">Tunçmatik Akü<br>Risk Durumu Analizi</div>
+    <p class="section-sub">Cihaz serinizi ve kurulum yılını girin, anlık risk durumunuzu öğrenin.</p>
+    <div class="risk-box">
+      <div class="risk-form">
+        <div class="form-group">
+          <label>Faz Tipi</label>
+          <select id="faz-select" onchange="updateModelList()">
+            <option value="">Faz Tipi Seçin</option>
+            <option value="mono">Mono Faz (1:1)</option>
+            <option value="31">3:1 Faz</option>
+            <option value="33">3:3 Faz</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cihaz Serisi</label>
+          <select id="model-select">
+            <option value="">Önce Faz Tipini Seçin</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Kurulum Yılı</label>
+          <input type="number" id="year-input" min="2010" max="2026" placeholder="örn. 2019">
+        </div>
+        <button class="btn-analyze" onclick="analyzeRisk()">🔍 ANALİZ ET</button>
+      </div>
+      <div id="risk-result"></div>
+    </div>
+  </div>
+</section>
+
+<!-- EV -->
+<section class="ev-section" id="ev">
+  <div class="section-inner">
+    <div class="section-label">Geleceğin Enerjisi</div>
+    <div class="section-title">Tunçmatik EV Şarj<br>İstasyonları</div>
+    <p class="section-sub">Tunçmatik'in EV şarj teknolojisiyle ev, ofis ve ticari alanlarda güvenilir elektrikli araç şarj altyapısı kurun.</p>
+    <div class="ev-grid">
+      <div class="ev-card">
+        <div class="ev-card-icon">🏗️</div>
+        <div class="ev-card-title">Kurulum Hizmeti</div>
+        <div class="ev-card-desc">Elektrik altyapı analizi, doğru konum belirleme, kablo tesisatı ve şarj noktası kurulumu profesyonel ekibimizle tamamlanır.</div>
+        <div class="ev-products">
+          <span class="ev-product-tag">Public Charger</span>
+          <span class="ev-product-tag">Pico Pro</span>
+          <span class="ev-product-tag">My Charger</span>
+        </div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-card-icon">🔧</div>
+        <div class="ev-card-title">Yerinde Servis</div>
+        <div class="ev-card-desc">Arıza tespiti, yazılım güncelleme, bağlantı kontrolü ve onarım hizmetleri. İstanbul geneli hızlı müdahale garantisiyle.</div>
+        <div class="ev-products">
+          <span class="ev-product-tag">Tüm Seriler</span>
+          <span class="ev-product-tag">EvPower Kablo</span>
+        </div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-card-icon">📋</div>
+        <div class="ev-card-title">Periyodik Bakım</div>
+        <div class="ev-card-desc">Yıllık bakım anlaşmaları, kontaktor kontrolü, topraklama testi ve güvenlik sertifikasyonu ile kesintisiz şarj operasyonu.</div>
+        <div class="ev-products">
+          <span class="ev-product-tag">Bakım Anlaşması</span>
+          <span class="ev-product-tag">Sertifikasyon</span>
+        </div>
+      </div>
+    </div>
+    <div class="ev-cta">
+      <div>
+        <div class="ev-cta-title">EV Şarj Çözümleri İçin Teklif Alın</div>
+        <div class="ev-cta-sub">Ticari, konut veya saha projeleriniz için özel fizibilite analizi ve fiyat teklifi.</div>
+      </div>
+      <a href="https://wa.me/905058525331?text=Merhaba%20Aytech%20ekibi%2C%20EV%20%C5%9Farj%20istasyonu%20kurulumu%20i%C3%A7in%20teklif%20almak%20istiyorum." target="_blank" class="btn-acil" style="font-size:15px;padding:14px 24px">
+        💬 WhatsApp'tan Teklif Al
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- INTERLINKING -->
+<section class="interlink" id="network">
+  <div class="section-inner">
+    <div class="section-label">Aytech Ekosistemi</div>
+    <div class="section-title">Dijital Ağımız —<br>Her Aşamada Yanınızdayız</div>
+    <p class="section-sub" style="color:#9ca3af">Farkındalıktan satın almaya, servisten sadakate — Aytech ekosistemi sizi her adımda karşılar.</p>
+    <div class="interlink-grid">
+      <a href="https://upsrehberi.com" target="_blank" class="ilink-card">
+        <div class="ilink-num">01</div>
+        <div class="ilink-icon">📚</div>
+        <div class="ilink-title">UPS Rehberi</div>
+        <div class="ilink-url">upsrehberi.com</div>
+        <div class="ilink-desc">Tunçmatik modellerini karşılaştır, teknik özellikleri öğren, UPS hesaplayıcı ile ihtiyacını belirle.</div>
+        <div class="ilink-arrow">→</div>
+      </a>
+      <a href="https://aytechelektromarket.com" target="_blank" class="ilink-card">
+        <div class="ilink-num">02</div>
+        <div class="ilink-icon">🛒</div>
+        <div class="ilink-title">E-Ticaret</div>
+        <div class="ilink-url">aytechelektromarket.com</div>
+        <div class="ilink-desc">Tüm Tunçmatik ürün serisini yetkili satıcı güvencesiyle satın alın. Kurumsal fatura ve teklifler için iletişime geçin.</div>
+        <div class="ilink-arrow">→</div>
+      </a>
+      <a href="https://kesintisizguc.com" target="_blank" class="ilink-card">
+        <div class="ilink-num">03</div>
+        <div class="ilink-icon">⚡</div>
+        <div class="ilink-title">Teknik Bilgi Bankası</div>
+        <div class="ilink-url">kesintisizguc.com</div>
+        <div class="ilink-desc">Kesintisiz güç sistemleri, UPS teknolojileri ve enerji yönetimi hakkında derinlemesine teknik içerikler.</div>
+        <div class="ilink-arrow">→</div>
+      </a>
+      <a href="https://aytechteknoloji.com" target="_blank" class="ilink-card">
+        <div class="ilink-num">04</div>
+        <div class="ilink-icon">🏢</div>
+        <div class="ilink-title">Kurumsal Merkez</div>
+        <div class="ilink-url">aytechteknoloji.com</div>
+        <div class="ilink-desc">Maltepe'deki ofisimize gelin. Kurumsal teklif, proje danışmanlığı ve servis sözleşmeleri için başvuru noktanız.</div>
+        <div class="ilink-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">TUNÇMATIK <span>SERVİS</span></div>
+      <div style="font-size:12px;color:#4b5563;margin-top:4px;font-family:var(--font-mono)">Aytech Teknoloji İnovasyon Ltd. Şti.</div>
+    </div>
+    <div class="footer-info">
+      <div>📍 Feyzullah Serap Cd. 10/A · 34843 Maltepe/İstanbul</div>
+      <div>📞 <a href="tel:+905058525331">+90 505 852 53 31</a></div>
+      <div id="footer-email"></div>
+    </div>
+    <div style="font-family:var(--font-mono);font-size:11px;color:#374151;text-align:right">
+      <div>Tunçmatik Yetkili Satıcı & Servis</div>
+      <div style="margin-top:4px">© 2026 Aytech Teknoloji</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Email obfuscation bypass
+(function(){
+  const e = ['info','@','aytechteknoloji','.com','.tr'].join('');
+  const el = document.getElementById('footer-email');
+  if(el) el.innerHTML = '✉ <a href="mailto:'+e+'" style="color:var(--orange);text-decoration:none">'+e+'</a>';
+})();
+
+// Model lists
+const models = {
+  mono: [
+    'PowerUP ONE Serisi',
+    'PowerUP ECO Serisi',
+    'Newtech PRO3 ONE',
+    'Newtech Eco X9',
+    'Lite II Serisi',
+    'Lift 1500VA',
+    'Digitech Eco'
+  ],
+  '31': [
+    'Newtech Plus X9 3/1 Serisi'
+  ],
+  '33': [
+    'Ultra One 10–40kVA',
+    'Ultra One 60–200kVA',
+    'Ultra One 300–600kVA'
+  ]
+};
+
+function updateModelList() {
+  const faz = document.getElementById('faz-select').value;
+  const sel = document.getElementById('model-select');
+  sel.innerHTML = '';
+  if(!faz) {
+    sel.innerHTML = '<option value="">Önce Faz Tipini Seçin</option>';
+    return;
+  }
+  sel.innerHTML = '<option value="">Model Seçin</option>';
+  (models[faz] || []).forEach(m => {
+    const opt = document.createElement('option');
+    opt.value = m;
+    opt.textContent = m;
+    sel.appendChild(opt);
+  });
+}
+
+function analyzeRisk() {
+  const model = document.getElementById('model-select').value;
+  const year = parseInt(document.getElementById('year-input').value);
+  const resultDiv = document.getElementById('risk-result');
+
+  if(!model || !year || year < 2010 || year > 2026) {
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = '<div class="result-card yellow"><div class="result-icon">⚠️</div><div class="result-text"><div class="result-title yellow">Eksik Bilgi</div><div class="result-desc">Lütfen cihaz serisini ve geçerli bir kurulum yılını girin (2010–2026).</div></div></div>';
+    return;
+  }
+
+  const age = 2026 - year;
+  let level, icon, title, desc, waMsg;
+
+  if(age <= 3) {
+    level = 'green';
+    icon = '✅';
+    title = 'Güvenli Bölge';
+    desc = model + ' cihazınız henüz erken yaşında. Akü kapasitesi normal aralıkta olmalıdır. Yıllık periyodik bakım ile mevcut performansı koruyabilirsiniz.';
+    waMsg = model + ' cihazım için yıllık bakım teklifi almak istiyorum.';
+  } else if(age <= 5) {
+    level = 'yellow';
+    icon = '⚠️';
+    title = 'Dikkat — Risk Sınırında';
+    desc = model + ' cihazınız ' + age + ' yıllık. Akü kapasitesinde kayıp başlamış olabilir. Yük altında beklenen sürenin altında çalışıyor olabilirsiniz. Akü kapasitesi ölçümü ve kalibrasyonu önerilir.';
+    waMsg = model + ' cihazım için akü kapasite kontrolü ve teklif almak istiyorum.';
+  } else {
+    level = 'red';
+    icon = '🚨';
+    title = 'KRİTİK RİSK — Akü Ömrü Dolmuş';
+    desc = model + ' cihazınız ' + age + ' yıllık. Akü ömrü büyük ihtimalle dolmuş; elektrik kesintisinde cihaz yükü taşıyamayacaktır. Acil akü değişimi gereklidir.';
+    waMsg = model + ' cihazımın akü ömrü dolmuş, acil değişim için teklif almak istiyorum.';
+  }
+
+  const waUrl = 'https://wa.me/905058525331?text=' + encodeURIComponent('Merhaba Aytech ekibi, ' + waMsg);
+
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = `
+    <div class="result-card ${level}">
+      <div class="result-icon">${icon}</div>
+      <div class="result-text">
+        <div class="result-title ${level}">${title}</div>
+        <div class="result-desc">${desc}</div>
+      </div>
+      <a href="${waUrl}" target="_blank" class="btn-teklif">💬 Orijinal Akü Teklifi Al</a>
+    </div>`;
+
+  resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+</script>
+</body>
+</html>
