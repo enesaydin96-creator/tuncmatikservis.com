@@ -387,6 +387,59 @@ footer { background:#0a0c10; color:white; padding:40px 24px; }
   .hero h1 { font-size:34px; }
   .risk-box { padding:28px 20px; }
 }
+
+/* ── FLOATING WA ── */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.wa-float a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45);
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+  animation: wa-pulse 2.5s infinite;
+}
+.wa-float a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,.6);
+  animation: none;
+}
+.wa-float svg { width: 30px; height: 30px; }
+.wa-tooltip {
+  background: var(--ink);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  padding: 6px 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity .2s, transform .2s;
+  pointer-events: none;
+}
+.wa-float:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+@keyframes wa-pulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.45); }
+  50% { box-shadow: 0 4px 32px rgba(37,211,102,.75); }
+}
+
 </style>
 </head>
 <body>
@@ -615,7 +668,26 @@ footer { background:#0a0c10; color:white; padding:40px 24px; }
       <div class="risk-form-row2">
         <div class="form-group">
           <label>Kurulum Yılı</label>
-          <input type="number" id="year-input" min="2010" max="2026" placeholder="örn. 2019">
+          <select id="year-input">
+            <option value="">Yıl Seçin</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+          </select>
         </div>
         <div></div>
         <button class="btn-analyze" onclick="analyzeRisk()">🔍 ANALİZ ET</button>
@@ -894,5 +966,17 @@ function analyzeRisk() {
   resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 </script>
+
+<!-- FLOATING WHATSAPP -->
+<div class="wa-float">
+  <span class="wa-tooltip">7/24 Bize Ulaşın</span>
+  <a href="https://wa.me/905058525331?text=Merhaba%20Aytech%20ekibi%2C%20Tun%C3%A7matik%20servis%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" aria-label="WhatsApp ile iletişime geçin">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 2C8.268 2 2 8.268 2 16c0 2.456.662 4.758 1.818 6.74L2 30l7.486-1.792A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="white"/>
+      <path d="M22.5 19.5c-.3-.15-1.77-.873-2.043-.972-.273-.099-.471-.148-.67.149-.198.297-.768.972-.942 1.17-.173.198-.347.223-.645.074-.298-.149-1.258-.464-2.396-1.48-.885-.79-1.482-1.765-1.655-2.063-.173-.297-.018-.458.13-.606.133-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.074-.149-.67-1.612-.917-2.207-.242-.58-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.793.372-.273.297-1.04 1.017-1.04 2.48s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#25D366"/>
+    </svg>
+  </a>
+</div>
+
 </body>
 </html>
